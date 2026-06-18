@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box;
+}
+
+.window {
+    border: 2px solid red;
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calc {
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    width: 269px;
+}
+
+.screen {
+    border: 2px solid green;
+    height: 100px;
+}
+
+.keys {
+    display: flex;
+    border: 2px solid blue;
+    flex-wrap: wrap;
+    gap: 2px;
+}
+
+.btn {
+    flex: 0 0 60px;
+    height: 50px;
+    margin: 2px;
+    cursor: pointer;
+}
+
