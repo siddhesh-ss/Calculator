@@ -20,6 +20,7 @@
 .screen {
     border: 2px solid green;
     height: 100px;
+    text-align: end;
 }
 
 .keys {
@@ -34,5 +35,10 @@
     height: 50px;
     margin: 2px;
     cursor: pointer;
+}
+
+.preview {
+    border: 2px solid gray;
+    line-height: 0;
 }
 

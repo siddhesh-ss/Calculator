@@ -1,5 +1,7 @@
 const digits = document.querySelectorAll(".digit");
 const signs = document.querySelectorAll(".operator");
+const allClear = document.getElementById("allClear");
+const clear = document.getElementById("clear");
 let scree = document.getElementById("screenText");
 
 let firstNumber = 0;
@@ -50,12 +52,33 @@ digits.forEach(digit => {
 
 signs.forEach(sign => {
     sign.addEventListener("click", (e) => {
+        
         if(isOperated) {
-            scree.textContent = operate(firstNumber, secondNumber, operator);
+            if(e.target.id == '=') {
+                scree.textContent = operate(firstNumber, secondNumber, operator);
+            }
+            else {
+                firstNumber = operate(firstNumber, secondNumber, operator);
+                secondNumber = 0;
+                operator = `${e.target.id}`;
+                scree.textContent = `${firstNumber}`;
+            }
         }
         else {
             operator = `${e.target.id}`;
             isOperated = true;
+            // if(firstNumber != 0) scree.textContent += operator;
         }
     });
 });
+
+allClear.addEventListener("click", () => {
+    firstNumber = 0;
+    secondNumber = 0;
+    scree.textContent = '';
+    isOperated = false;
+});
+
+// clear.addEventListener("click", () => {
+    
+// });
